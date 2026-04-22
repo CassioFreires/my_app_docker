@@ -5,6 +5,10 @@ const app = express();
 const porta = process.env.PORT || 8080;
 const message = process.env.MESSAGE || 'Hello, World!';
 
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
 app.get('/', (req, res) => {
   res.send(message);
 });
